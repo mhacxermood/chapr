@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/screensplash.css">
+    <link rel="stylesheet" href="Onsen/css/onsenui.css">
+    <link rel="stylesheet" href="Onsen/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/signup.css">
+
+    <script src="Onsen/js/onsenui.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script>
+        window.addEventListener("orientationchange", function(){
+            screen.orientation.lock('landscape-primary');
+        });
+    </script>
+</head>
+
+<body style="background-color: white;">
+    <ons-page>
+        <ons-toolbar class="toolbar">
+            <div class="center">
+                S'inscrire
+            </div>
+        </ons-toolbar>
+        <main class="content">
+            <div class="d-flex justify-content-center">
+                <img src="img/chapr_icon.png" alt="Chapr" height="150" />
+            </div>
+            <div class="d-flex justify-content-center">
+                <span class="font-weight-bold text-capitalize icon-text">chapr</span>
+            </div>
+            <br>
+            <form action="text.php" method="POST">
+
+                <div class="d-flex justify-content-center">
+                    <ons-input type="text" name="username" id="username" modifier="material underbar" class="w-75" placeholder="Nom & Prenoms">
+                    </ons-input><br>
+                </div>
+                <div class="d-flex ml-5">
+                    <span class="text-danger">Votre pseudo est requis</span>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <ons-input type="email" name="mail" modifier="material underbar" class="w-75"
+                        placeholder="E-mail"></ons-input>
+                </div>
+                <div class="d-flex ml-5">
+                    <span class="text-danger">Votre mail est requis et dois etre valide</span>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <ons-input type="password" name="password" modifier="material underbar" class="w-75"
+                        placeholder="Password"></ons-input>
+                </div>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <ons-input type="password" name="password_confirmation" modifier="material underbar" class="w-75"
+                        placeholder="Confirm Password"></ons-input>
+                </div>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <ons-select id="choose-sel" name="status" class="w-75" modifier="material underbar">
+                        <option selected>Status</option>
+                        <option value="Consommateur">Consommateur</option>
+                        <option value="Distributeur">Distributeur</option>
+                        <option value="Transporteur">Transporteur</option>
+                        <option value="Fournisseur">Fournisseur</option>
+                    </ons-select>
+                </div>
+                <br>
+                <div class="style-check">
+                    <label>
+                        <ons-checkbox input-id="check-2"></ons-checkbox>
+                      </label>
+                      <label for="check-2" class="text-success">
+                        Accepter les conditions d'utilisations
+                      </label>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <ons-button id="ok" class="w-75 text-center button">S'inscrire</ons-button>
+                </div>
+            </form>
+    </ons-page>
+    <script>
+       $(function(){
+           $("#ok").click(function(e){
+               e.preventDefault();
+               var input=$(":input");
+               $.post('http://rockfellersite.000webhostapp.com/treatdata.php',{
+                    username:$(input[0]).val(),
+                    mail:$(input[1]).val(),
+                    password:$(input[2]).val(),
+                    password_confirmation:$(input[3]).val(),
+                    status:$(input[4]).val(),
+                    conditions:$(input[5]).val()
+               }).done(function(data){
+                   alert(data);
+               })
+           })
+       })
+    </script>
+</body>
+
+</html>

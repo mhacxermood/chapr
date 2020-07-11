@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/screensplash.css">
+    <link rel="stylesheet" href="Onsen/css/onsenui.css">
+    <link rel="stylesheet" href="Onsen/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/splitter.css">
+
+    <script src="Onsen/js/onsenui.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/Chart.js"></script>
+    <script>
+        window.addEventListener("orientationchange", function(){
+            screen.orientation.lock('landscape-primary');
+        });
+    </script>
+</head>
+
+<body style="background-color: white;">
+<ons-page>
+    <ons-toolbar style="border: none !important;box-shadow: none;">
+        <div class="left ml-2">
+            <span class="dashboard-text-style">Tableau de bord</span>
+        </div>
+        <div class="right">
+            <i class="fa fa-ellipsis-v mr-2" aria-hidden="true"></i>
+        </div>
+    </ons-toolbar>
+    <header>
+        <div class="header-bloc">
+            <h4>Hello Wilson</h4>
+        </div>
+        <div class="setting">
+            <span>Param&egrave;tre</span>
+        </div>
+    </header>
+    <div class="card c-1">
+        <div class="body">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="search" name="" id="" placeholder="Rechercher...">
+        </div>
+    </div>
+    <div class="card c-2">
+        <div class="body">
+           <div class="wrapper">
+               <button class="btn btn-1 circle-icon">
+                       <i class="fa fa-user fa-1x" aria-hidden="true"></i>
+               </button>
+               <button class="btn btn-2 circle-icon">
+                    <i class="fa fa-users-cog" aria-hidden="true"></i>
+               </button>
+               <button class="btn btn-3 circle-icon">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+               </button>
+               <button class="btn btn-4 circle-icon">
+                    <i class="fa fa-qrcode" aria-hidden="true"></i>
+                </button>
+           </div>
+           <div class="wrapper mt-4">
+                <button class="btn btn-5 circle-icon">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-6 circle-icon">
+                    <i class="fa fa-comments" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-7 circle-icon">
+                    <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-8 circle-icon">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card c-4 p-2 border border-none">
+        <div class="body">
+            <div>
+                <header>
+                    <h3 class="text-white">Activit&eacute; r&eacute;cente</h3>
+                </header>
+            </div>
+            <table class="table table-borderless table-responsive w-100">
+                
+            </table>
+        </div>
+    </div>
+
+    <ons-tabbar id="tabbar" swipeable position="bottom">
+        <ons-tab label="Dashboard"  icon="md-view-dashboard"></ons-tab>
+        <ons-tab label="Notifications" page="notification.html" id="notify"  icon="md-notifications-none" ng-click="notify()"></ons-tab>
+        <ons-tab label="Chat" page="chat.html" icon="md-comment-alert" ></ons-tab>
+        <ons-tab label="Mapping" page="mapping"  icon="md-google-maps" ></ons-tab>
+    </ons-tabbar>
+</ons-page>
+<script>
+    
+</script>
+</body>
+</html>

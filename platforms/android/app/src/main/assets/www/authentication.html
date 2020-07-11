@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/screensplash.css">
+    <link rel="stylesheet" href="Onsen/css/onsenui.css">
+    <link rel="stylesheet" href="Onsen/css/onsen-css-components.min.css"> -->
+    <link rel="stylesheet" href="css/authentication.css">
+
+    <script src="Onsen/js/onsenui.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script>
+        window.addEventListener("orientationchange", function(){
+            screen.orientation.lock('landscape-primary');
+        });
+    </script>
+</head>
+
+<body>
+    <div class="d-flex justify-content-center mt-5"><img src="img/chapr_icon.png" alt="" class="img-fluid"></div>
+    <form action="" class="">
+       <div class="form-group group-mail">
+         <input type="email" name="" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+         <label for="">E-mail</label>
+       </div>
+       <div class="form-group group-password">
+        <input type="password" name="" id="password" class="form-control" placeholder="" aria-describedby="helpId">
+        <label for="">Password</label>
+      </div>
+      <div class="form-group">
+        <button class="w-100" type="submit">Se connecter</button>
+      </div>
+    </form>
+    <footer class="footer">
+        <span class="small">Termes et conditions</span>
+    </footer>
+    <script>
+        $(function(){
+            $("button").click(function(e){
+                e.preventDefault();
+                location.assign("transporteur.html");
+            })
+        })
+    </script>
+</body>
+
+</html>

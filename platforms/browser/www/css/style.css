@@ -1,0 +1,27 @@
+#mySwipe{
+  height: 100vh;
+}
+#swipe-wrap-item>div{
+  height: 100vh;
+}
+#swipe-wrap-item-1{
+  background-color: black;
+}
+#swipe-wrap-item-2{
+  background-color: steelblue;
+}
+#swipe-wrap-item-3{
+  background-color: green;
+}
+#swipe-wrap-item-4{
+  background-color: orange;
+}
+#prev{
+  transform: translateY(-50vh);
+  border:none;
+}
+#next{
+  transform: translateY(-50vh);
+  border:none;
+}
+
